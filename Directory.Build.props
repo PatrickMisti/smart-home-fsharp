@@ -1,0 +1,34 @@
+<Project>
+
+  <!-- Gemeinsame Einstellungen für alle Projekte der Solution -->
+  <PropertyGroup>
+    <TargetFramework>net11.0</TargetFramework>
+    <LangVersion>latest</LangVersion>
+    <Nullable>enable</Nullable>
+    <TreatWarningsAsErrors>false</TreatWarningsAsErrors>
+    <WarningsAsErrors>$(WarningsAsErrors);FS0025</WarningsAsErrors> <!-- unvollständiges Pattern Matching -->
+    <WarnOn>$(WarnOn);3390</WarnOn> <!-- XML-Doc-Kommentare prüfen -->
+    <Deterministic>true</Deterministic>
+    <SatelliteResourceLanguages>en;de</SatelliteResourceLanguages>
+    <!-- FSharp.Core wird zentral über Directory.Packages.props versioniert -->
+    <DisableImplicitFSharpCoreReference>true</DisableImplicitFSharpCoreReference>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FSharp.Core" />
+  </ItemGroup>
+
+  <!-- Metadaten -->
+  <PropertyGroup>
+    <Authors>PatrickMisti</Authors>
+    <Product>SmartHome</Product>
+  </PropertyGroup>
+
+  <!-- Testprojekte erkennen (Ordner tests/ oder Name endet auf .Tests) -->
+  <PropertyGroup Condition="$(MSBuildProjectName.EndsWith('.Tests'))">
+    <IsPackable>false</IsPackable>
+    <IsTestProject>true</IsTestProject>
+    <GenerateDocumentationFile>false</GenerateDocumentationFile>
+  </PropertyGroup>
+
+</Project>

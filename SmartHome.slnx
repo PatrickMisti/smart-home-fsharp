@@ -1,0 +1,10 @@
+<Solution>
+  <Folder Name="/src/">
+    <Project Path="src/Api/Api.fsproj" />
+    <Project Path="src/Shared/Shared.fsproj" />
+    <Project Path="src/UI/UI.fsproj" />
+  </Folder>
+  <Folder Name="/tests/">
+    <Project Path="tests/Api.Tests/Api.Tests.fsproj" />
+  </Folder>
+</Solution>

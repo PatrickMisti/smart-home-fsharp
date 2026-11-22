@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <!-- Wird mit Fable nach JavaScript kompiliert (siehe package.json).
+       "dotnet build" dient nur der Typprüfung / IDE-Unterstützung. -->
+
+  <PropertyGroup>
+    <!-- Fable kompiliert die Quellen der Bibliotheken (Feliz, SimpleJson, ...) mit;
+         die sind nicht für F# Nullness-Checks annotiert. -->
+    <Nullable>disable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="Api.fs" />
+    <Compile Include="App.fs" />
+    <Compile Include="Main.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Fable.Core" />
+    <PackageReference Include="Fable.Browser.Dom" />
+    <PackageReference Include="Fable.Elmish" />
+    <PackageReference Include="Fable.Elmish.React" />
+    <PackageReference Include="Fable.Elmish.HMR" />
+    <PackageReference Include="Feliz" />
+    <PackageReference Include="Fable.Remoting.Client" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\Shared.fsproj" />
+  </ItemGroup>
+
+</Project>

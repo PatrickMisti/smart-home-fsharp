@@ -55,3 +55,14 @@ CodeCoverage/
 *.VisualState.xml
 TestResult.xml
 nunit-*.xml
+
+# Node / Fable / Vite
+node_modules/
+src/UI/output/
+src/UI/dist/
+.fable/
+
+# Lokale Datenbanken
+*.db
+*.db-shm
+*.db-wal

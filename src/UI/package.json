@@ -1,0 +1,19 @@
+{
+  "name": "smart-home-ui",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "postinstall": "dotnet tool restore",
+    "dev": "dotnet fable watch -o output -s --run vite",
+    "build": "dotnet fable -o output --run vite build",
+    "clean": "dotnet fable clean -o output --yes"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^5.0.0",
+    "vite": "^7.0.0"
+  }
+}
